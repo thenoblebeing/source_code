@@ -86,11 +86,14 @@ const cartService = {
             return localCart;
           }
         } else {
-          // Return cart from localStorage if user is not logged in
+          // Return cart from localStorage if user is not logged in (normal behavior for guests)
           return localCart;
         }
       } catch (userError) {
-        console.error('Error fetching user:', userError);
+        // Only log error if it's not a missing auth session (which is normal for guests)
+        if (!userError.message || !userError.message.includes('Auth session missing')) {
+          console.error('Error fetching user:', userError);
+        }
         return localCart;
       }
     } catch (error) {

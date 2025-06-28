@@ -59,15 +59,6 @@
       window.addEventListener('error', function(e) {
         console.error('Global error:', e.message, 'in', e.filename, 'line', e.lineno);
       });
-      
-      // Check if React has loaded
-      setTimeout(function() {
-        if (!window.React || !window.ReactDOM) {
-          console.error('React failed to load!');
-        } else {
-          console.log('React loaded successfully');
-        }
-      }, 2000);
     </script>
     <!--
       This HTML file is a template.

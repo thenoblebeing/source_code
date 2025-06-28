@@ -189,6 +189,22 @@ const productService = {
     }
   },
 
+  // Get best sellers
+  getBestSellers: async (limit = 8) => {
+    try {
+      const { data } = await api.get('products', {
+        filters: { popular: true },
+        order: { column: 'created_at', ascending: false },
+        range: { from: 0, to: limit - 1 }
+      });
+      
+      return data;
+    } catch (error) {
+      console.error('Error fetching best sellers:', error);
+      throw error;
+    }
+  },
+
   // Search products
   searchProducts: async (query, filters = {}) => {
     try {
