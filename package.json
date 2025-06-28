@@ -39,24 +39,15 @@
     "three-mesh-bvh": "^0.7.0"
   },
   "scripts": {
-    "start": "set CI=false && react-scripts start",
-    "build": "set CI=false && react-scripts build",
+    "start": "CI=false react-scripts start",
+    "build": "CI=false react-scripts build",
     "postbuild": "cp -f .env.production build/.env || true",
     "serve": "serve -s build -l 4000",
     "start:prod": "npm run build && npm run serve",
     "build:prod": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint src --ext .js,.jsx",
-    "lint:fix": "eslint src --ext .js,.jsx --fix",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "setup": "npm install --legacy-peer-deps",
-    "postinstall": "echo \"WARNING: Dependency conflicts detected! Please run 'npm run setup' instead of 'npm install' to install dependencies properly.\""
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "eslintConfig": {
     "extends": [
