@@ -1,0 +1,89 @@
+{
+  "name": "the-noble-being",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "/",
+  "proxy": "http://localhost:3001",
+  "description": "The Noble Being - Artisanal Fashion E-commerce Platform with Virtual Try-On",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@emailjs/browser": "^3.12.0",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@supabase/storage-js": "^2.7.3",
+    "@supabase/supabase-js": "^2.49.8",
+    "axios": "^1.6.2",
+    "framer-motion": "^10.16.4",
+    "gsap": "^3.12.2",
+    "postcss-modules-extract-imports": "^3.1.0",
+    "postcss-modules-local-by-default": "^4.2.0",
+    "postcss-modules-scope": "^3.2.1",
+    "postcss-modules-values": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.2",
+    "react-router-dom": "^6.19.0",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
+    "react-webcam": "^7.2.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.1",
+    "three": "^0.160.0",
+    "three-mesh-bvh": "^0.7.0",
+    "web-vitals": "^3.5.0"
+  },
+  "overrides": {
+    "three-mesh-bvh": "^0.7.0"
+  },
+  "scripts": {
+    "start": "set CI=false && react-scripts start",
+    "build": "set CI=false && react-scripts build",
+    "postbuild": "cp -f .env.production build/.env || true",
+    "serve": "serve -s build -l 4000",
+    "start:prod": "npm run build && npm run serve",
+    "build:prod": "npm run build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "setup": "npm install --legacy-peer-deps",
+    "postinstall": "echo \"WARNING: Dependency conflicts detected! Please run 'npm run setup' instead of 'npm install' to install dependencies properly.\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

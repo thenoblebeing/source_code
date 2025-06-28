@@ -1,0 +1,191 @@
+/* Navigation.css - Styles for TheNobleBeing navigation component */
+
+nav {
+  background-color: var(--deep-charcoal);
+  color: var(--sage-green);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--soft-gold);
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.logo h1:hover {
+  text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--sage-green);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--neon-magenta);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--neon-magenta);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.search-cart {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-bar input {
+  background-color: var(--sandstone-beige);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px 0 0 4px;
+  width: 220px;
+  font-family: 'Inter', sans-serif;
+  color: var(--deep-charcoal);
+}
+
+.search-bar input::placeholder {
+  color: var(--deep-charcoal);
+  opacity: 0.7;
+}
+
+.search-btn {
+  background-color: var(--sage-green);
+  color: var(--white);
+  border-radius: 0 4px 4px 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--neon-magenta);
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cart-icon, .account-icon {
+  color: var(--soft-gold);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.cart-icon:hover, .account-icon:hover {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Mobile menu button - hidden by default */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--sage-green);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  color: var(--neon-magenta);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .search-bar input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-links {
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    order: 3;
+  }
+  
+  .nav-links.open {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+  
+  .search-cart {
+    order: 2;
+  }
+  
+  .search-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+}

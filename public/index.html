@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="The Noble Being - Artisanal Fashion E-commerce Platform with Virtual Try-On" />
+    <meta name="author" content="The Noble Being" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>The Noble Being | Artisanal Fashion</title>
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Noble Being | Artisanal Fashion" />
+    <meta property="og:description" content="Experience artisanal fashion with our virtual try-on platform" />
+    <meta property="og:url" content="https://the-noble-being.windsurf.build" />
+    <meta property="og:site_name" content="The Noble Being" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Noble Being | Artisanal Fashion" />
+    <meta name="twitter:description" content="Experience artisanal fashion with our virtual try-on platform" />
+    <meta name="description" content="The Noble Being - Premium artisanal fashion with virtual try-on experience" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <base href="/" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="The Noble Being" />
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #1a1a1a; z-index: 9999; padding: 2rem;">
+        <div style="width: 50px; height: 50px; border: 3px solid rgba(255, 204, 51, 0.2); border-top: 3px solid var(--soft-gold, #ffcc33); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem;"></div>
+        <p style="color: var(--soft-gold, #ffcc33); font-size: 0.9rem; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Loading...</p>
+      </div>
+    </div>
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      :root {
+        --soft-gold: #ffcc33;
+      }
+    </style>
+    <script>
+      // Debugging script
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.message, 'in', e.filename, 'line', e.lineno);
+      });
+      
+      // Check if React has loaded
+      setTimeout(function() {
+        if (!window.React || !window.ReactDOM) {
+          console.error('React failed to load!');
+        } else {
+          console.log('React loaded successfully');
+        }
+      }, 2000);
+    </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
