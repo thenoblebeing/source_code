@@ -1,5 +1,7 @@
 // Import supabaseClient from our centralized client file
 import supabase from './supabaseClient';
+// Import the getUser function with graceful error handling
+import { getUser as getSupabaseUser } from './supabaseClient';
 
 // Log connection information (without exposing sensitive data)
 console.log('Using Supabase client from supabaseClient.js');
@@ -272,14 +274,8 @@ const api = {
      */
     async getUser() {
       try {
-        const { data, error } = await supabase.auth.getUser();
-
-        if (error) {
-          console.error('Supabase auth.getUser error:', error);
-          throw error;
-        }
-
-        return data.user;
+        // Use the getUser function from supabaseClient.js which has graceful error handling
+        return await getSupabaseUser();
       } catch (err) {
         console.error('Error in getUser method:', err);
         throw err;
